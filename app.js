@@ -7,6 +7,9 @@ const bodyParser         = require('body-parser');
 const expressLayouts     = require('express-ejs-layouts');
 const mongoose           = require('mongoose');
 
+// env
+require('dotenv').config()
+
 //authentication 
 const passport           = require('passport');
 const session            = require('express-session');
@@ -15,7 +18,6 @@ const session            = require('express-session');
 const LocalStrategy      = require('passport-local').Strategy;
 const User               = require('./models/user');
 const bcrypt             = require('bcrypt');
-require('dotenv').config()
 
 //OAuth Config
 const FbStrategy = require('passport-facebook').Strategy;
