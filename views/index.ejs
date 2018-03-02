@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="home-heading text-center row">
+      <div class="home-heading-wrapper">
+        <h1>Who Loves DP?</h1>
+        <p>Natural, Artificial, Extra Terrestrial.... Just Sweeten That Shit Up!</p>
+        <a class="btn btn-default" href="/locations/search">Find Your Happy Place</a>
+      </div>
+    </div>
+  </div>
+    
+  <div class="campaign-row row">
+      <h3 class="text-center">You may be interested in...</h3>
+      <% spotNames.forEach((oneSpot) => { %>
+        <div class="col-sm-3 home-campaign-box">
+          <img src="<%= oneSpot.image %>">
+          <div class="campaign-info-wrapper">
+            <a class="title" href="/campaigns/<%= oneSpot._id %>">
+              <strong><%= oneSpot.spotName %></strong>
+            </a><br>
+            by <span class="light-text"><%= oneSpot._creator.username %></span><br>
+            <span class="light-text description"><%= oneSpot.description %></span>
+          </div>
+          <% if(user._id.equals(oneSpot._creator._id)) { %>
+            <button><a href="/locations/<%=oneSpot._id%>/edit">Edit</a> </button>
+          <% } %>
+          <form action="/locations/<%=oneSpot._id%>/delete" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      <%  }) %>
+    </div>
+
+

@@ -1,0 +1,30 @@
+<h2> Search for Your Next DP  </h2>
+
+<form method="get" action="/locations/search">
+  <label for="search-term-input"> Search By City </label>
+  <input  id="search-term-input" type="search" name="locationSearchTerm">
+  <br>
+
+  <button> Search </button>
+</form>
+
+<br>
+
+<% if (typeof locations !== 'undefined') { %>
+    <h2> Results </h2>
+  
+    <ul>
+      <% locations.forEach((oneLocation) => { %>
+        <li>
+          <h3> <%= oneLocation.spotName %> </h3>
+          <p> Location: <%= oneLocation.spotName %> </p>
+          <p> Address: <%= oneLocation.street_number %> <%= oneLocation.route %></p>
+          <p> City, State: <%= oneLocation.city %>, <%= oneLocation.state %> </p>
+          <a href="/locations/<%= oneLocation._id %>">
+            View Details
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
