@@ -259,10 +259,6 @@ progress {
   font-size: 20px;
 }
 
-#facebookLogin a{
-  color: white;
-}
-
 .facebook-button {
   height: 42px;
   width: 400px;
@@ -290,7 +286,6 @@ progress {
 
 #dr-pepper-song {
   padding-right: 44%;
-  margin-top: 50px;
 }
 #signup-page {
   text-align: center;
